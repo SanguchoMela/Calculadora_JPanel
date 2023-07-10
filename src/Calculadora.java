@@ -29,14 +29,11 @@ public class Calculadora {
     private JButton button_borrarIn;
     private JButton button_borrarTodo;
     private JButton button_percent;
+    private JButton button_coma;
 
     double num1=0;
     double num2=0;
     String operacion;
-    boolean nueva=true;
-
-
-
 
     public Calculadora() {
         button_1.addActionListener(new ActionListener() {
@@ -130,6 +127,16 @@ public class Calculadora {
                 cajaTotal.setText(cajaTotal.getText()+"0");
             }
         });
+        button_coma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(cajaTotal.getText() == "0" | cajaTotal.getText() == null){
+                    cajaTotal.setText("");
+                }
+                cajaTotal.setText(cajaTotal.getText()+".");
+            }
+        });
+        //--------------ACCIONES PARA BOTONES DE OPERACIONES BASICAS------------------
         button_mas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -314,6 +321,7 @@ public class Calculadora {
                 num1 = num2 = 0;
             }
         });
+
 
     }
 
