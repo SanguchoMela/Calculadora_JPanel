@@ -283,17 +283,11 @@ public class Calculadora {
                     num1 = resultado;
                 }
 
-                //------------------------  LA EXCEPCION NO FUNCIONA -------------------------------------------------//
                 else if(operacion == "division"){
                     cajaOp.setText(num1 + " / "+ num2 + " = ");
-                    try{
-                        double resultado = num1/num2;
-                        cajaTotal.setText(String.valueOf(resultado));
-                        num1 = resultado;
-                    } catch (ArithmeticException ingresoCero) {
-                        cajaTotal.setText("No se puede dividir entre cero");
-
-                    }
+                    double resultado = num1/num2;
+                    cajaTotal.setText(String.valueOf(resultado));
+                    num1 = resultado;
                 }
 
                 else if(operacion == "potencia"){
